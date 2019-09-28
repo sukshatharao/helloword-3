@@ -38,7 +38,7 @@ TASK3
 8.	Printing the sorted values : I used the inbuilt sorting function in python- this is timsort(exceptionally adaptive merge sort)- O(nlogn)
  
 Overall, the time complexity is O(n + n log n)
-Time complexity is O(n)
+Time complexity is O(n log n) since this particular term in the above Big O will contribute more as input value "n" increases 
 Dictionary is used to maintain the key value pairs and maintain the uniqueness, assigning the dictionary with key and value is executed once for every if-else condition
 
 
@@ -48,4 +48,4 @@ TASK4
 3. Printing the sorted values : I used the inbuilt sorting function of python- this is timsort(exceptionally adaptive merge sort)- O(nlogn)
 
 Overall, the time complexity is O(n + nlog n).
-Time complexity is O(n)
+Time complexity is O(nlog n) since this particular term in the above Big O will contribute more as input value "n" increases
