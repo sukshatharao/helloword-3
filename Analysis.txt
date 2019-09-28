@@ -1,61 +1,49 @@
 Once you have completed your solution for each problem, perform a run time analysis (Worst Case Big-O Notation) of your solution. Document this for each problem and include this in your submission.
 
 TASK0 
-1.	Csv.reader reads line by line in the file, hence the complexity is O(n) – for one file -> n is the number of lines in the file
-2.	O(1) for print the topmost line
- 
-Since there is one “calls” file and one “texts” file- the complexity is O(2)+2
+1. Reading each of the files is an O(n) operation.
+2. Printing out information about the first call and last text is O(1) each.
+
+ Overall, the time complexity is O(n).
+
 
  
-TASK1 – Implementation 2nd way
-1.	The reading of files has complexity of O(2n)
-2.	For loop is executed depending on the rows in the file: O(n) -> n is the number of rows in the file. There are two different loops : hence complexity is O(2n)
-3.	Let’s take the worst case and say the if condition is executed every time- which means all the numbers are distinct , then in this case complexity is O(n)
-4.	For calls , two if conditions have two if conditions – hence O(2n)
-5.	Appending is O(1)- for worst case- will be appending n times , O(n) -> O(2n)
-6.	Printing the output is O(1)
+TASK1
+1. Reading each of the .csv files is O(n).
+2. For each call and each text in the data set, both numbers involved are added to a set. This is O(n) because appending to a set is O(1).
+3. Printing the length of the set is O(1).
+Overall, the time complexity is O(n).
 
-Hence for call records: total complexity -O(4n)
-Hence for text records: total complexity- O(4n) 
+I used set to store the telephone numbers and the add function in set adds an element to the set if it is not already present in the set.
+Hence, it would solve the problem of displaying distinct telephone numbers.
 
-Total complexity: O(8n+1)
 
 
 TASK2 
-1.	Reading of the file is dependent on the size of the file, reads every line by line: O(n)
-2.	For loop to iterate through calls list: O(n)
-3.	Either if or else condition will be executed: then this is executed once in one iteration, then O(n)
-4.	Addition of the number inside the if-else condition is also once per iteration: so O(1) for one addition; for n iterations : O(n)
-5.	Calculating maximum takes : O(1)
-6.	Printing the output takes: O(1)
+1. Reading each of the .csv files is O(n).
+2. For each call and each text in the data set, if the number is not in the dictionary, {number, time spent on call} is added to the dictionary. This is O(n) because adding to a dictionary is O(1).
+3. Calculating maximum takes : O(1)
+4. Printing the output takes: O(1)
 
-Except step 1,5,6 , rest are same for receiving numbers as well.
-Hence for reading the file , calling numbers and receiving numbers together : O(n) + O(3n)+ O(3n )
-So total: O(7n+2) 
+Overall, the time complexity is O(n).
+I used dictionary to store the telephone numbers and time spent on call. Dictionary stores key, value pairs which makes it suitable to solve the question.
+
 
 
 
 TASK3 
-1.	Reading of the file is dependent on the size of the file, reads every line by line: O(n)
-2.	For loop is executed n times : O(n)
-3.	O(2) for search of the pattern in every iteration of loop: (2n)
-4.	If condition in worst case will be executed once in every iteration, 4 if conditions: O(3n)
-5.	Summing up in order to get the Bangalore calls that are received: O(n)
-6.	Dictionary is used to maintain the key value pairs and maintain the uniqueness, assigning the dictionary with key and value is executed once for if-else condition
+1.	Reading each of the .csv files is O(n).
+2.	For each call in the data set, check if the calling number matches the regular expression to calculate calls from "fixed line in BNG to fixed line in BNG"; Check if the recieving number is in the dictionary and then add the number of calls to get the frequency of the calls from every code: hence this for loop is O(n)
 7.	Printing the output % is O(1)
-8.	Printing the sorted values : I used the inbuilt sorting function of python- this is timsort(exceptionally adaptive merge sort)- O(nlogn)
+8.	Printing the sorted values : I used the inbuilt sorting function in python- this is timsort(exceptionally adaptive merge sort)- O(nlogn)
  
-Hence: O(9n+1) + O(nlogn)
-
+Overall, the time complexity is O(n)
+Dictionary is used to maintain the key value pairs and maintain the uniqueness, assigning the dictionary with key and value is executed once for every if-else condition
 
 
 TASK4 
-1.	Reading of the file is dependent on the size of the file, reads every line by line: O(n) 
-2.	For loop is executed n times : O(n)
-3.	If condition in worst case will be executed once in every iteration and so will the appending of the number to the telemarketer list
-4.	Hence O(n) and O(n) will be complexity for two if conditions
-5.	And O(n) and O(n) for appending or removing the elements from the telemarketers in the list
-6.	This steps 1 to 4 also holds good for the texts csv file
-7.	Printing the sorted values : I used the inbuilt sorting function of python- this is timsort(exceptionally adaptive merge sort)- O(nlogn)
- 
-Hence , total complexity is O(11n+1) + O(nlogn)
+1. Reading each of the .csv files is O(n).
+2. For each call in the data set, append the value of the telephone numbern into the array which are present as a calling number , remove the entry from the array when this entry is a recieving number / recieving text/ sending text. This for loop takes O(n)
+3. Printing the sorted values : I used the inbuilt sorting function of python- this is timsort(exceptionally adaptive merge sort)- O(nlogn)
+
+Overall, the time complexity is O(n).
